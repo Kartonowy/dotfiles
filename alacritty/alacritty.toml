@@ -1,0 +1,20 @@
+import = [
+    "~/.config/alacritty/catppuccin-macchiato.toml",
+]
+
+[shell]
+program = "/bin/bash"
+
+[window]
+opacity = 0.8
+blur = true
+title = "Where is my mind"
+startup_mode = "Maximized"
+
+[font]
+normal = { family = "FiraMonoNerdFont", style = "Medium" }
+bold = { family = "FiraCodeNerdFontMono", style = "Bold" }
+
+[mouse]
+hide_when_typing = true
+
