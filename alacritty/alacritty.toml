@@ -1,8 +1,5 @@
-import = [
-    "~/.config/alacritty/catppuccin-macchiato.toml",
-]
 
-[shell]
+[terminal.shell]
 program = "/bin/bash"
 
 [window]
@@ -17,4 +14,11 @@ bold = { family = "FiraCodeNerdFontMono", style = "Bold" }
 
 [mouse]
 hide_when_typing = true
+
+[general]
+import = [
+    "~/.config/alacritty/catppuccin-macchiato.toml",
+]
+
+[terminal]
 
