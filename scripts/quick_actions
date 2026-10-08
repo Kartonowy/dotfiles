@@ -1,0 +1,36 @@
+#!/bin/sh
+
+actions=(
+    "pdfs firefox"
+    "zathura"
+    "timetable"
+)
+
+result=$(printf '%s\n' "${actions[@]}" | rofi -dmenu -theme ~/.config/rofi/style.rasi -p "Quick actions")
+
+
+case $result in
+    "timetable")
+        firefox "file:///home/lain/Documents/Plan%20lekcji_files/o29.html"
+        ;;
+    "pdfs firefox")
+        firefox "file:///home/lain/Documents/pdfs/$(ls $HOME/Documents/pdfs | rofi -dmenu -theme ~/.config/rofi/style.rasi -p "pdfs")"
+        ;;
+    "zathura")
+        zathura "file:///home/lain/Documents/pdfs/$(ls $HOME/Documents/pdfs | rofi -dmenu -theme ~/.config/rofi/style.rasi -p "zathura")"
+        ;;
+
+
+esac    
+
+# SELECT="$( echo -e "$(tmux list-sessions -F "#{session_name}")\nnew" | rofi -dmenu -theme ~/.config/rofi/style.rasi -p "tmux")" 
+
+# if [[ "$SELECT" == "new" ]]; then
+#     NEWNAME="$(rofi -dmenu -theme ~/.config/rofi/style.rasi -theme-str 'listview { scrollbar: false; lines: 0; }' -p "Name of tmux session")"
+#     if [[ -n "$NEWNAME" ]]; then
+#         ghostty -e tmux new -s $NEWNAME
+#     fi
+# elif [[ -n "$SELECT" ]]; then
+#     ghostty -e tmux attach -t $SELECT
+# fi
+
